@@ -1079,8 +1079,8 @@ EOS;
 						$vmcopy->sstBelongsToCustomerUID = Yii::app()->user->customerUID;
 						// necessary ?
 						$vmcopy->sstBelongsToResellerUID = Yii::app()->user->resellerUID;
-						// necessary ?
-						$vmcopy->sstOsBootDevice = 'hd';
+						// necessary ? => YES!
+						$vmcopy->sstOsBootDevice = $vm->sstOsBootDevice;
 						$vmcopy->sstSpicePort = CPhpLibvirt::getInstance()->nextSpicePort($vmcopy->sstNode);
 						$vmcopy->sstSpicePassword = CPhpLibvirt::getInstance()->generateSpicePassword();
 						$vmcopy->save();
